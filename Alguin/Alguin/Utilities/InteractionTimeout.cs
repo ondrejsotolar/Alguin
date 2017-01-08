@@ -45,7 +45,7 @@ namespace Alguin.Utilities
         /// <summary>
         /// Wait on current thread
         /// </summary>
-        /// <param name="miliseconds">time to wait in miliseconds</param>
+        /// <param name="miliseconds">(optional) time to wait in miliseconds</param>
         public static void Wait(int miliseconds = Interaction) {
             Thread.Sleep(miliseconds);
         }

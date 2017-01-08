@@ -1,8 +1,8 @@
 ﻿using System;
-using TestStack.White;
-using TestStack.White.UIItems.WindowItems;
-using TestStack.White.Factory;
 using Alguin.Utilities;
+using TestStack.White;
+using TestStack.White.Factory;
+using TestStack.White.UIItems.WindowItems;
 
 namespace Alguin.AppWrapper
 {
@@ -16,17 +16,18 @@ namespace Alguin.AppWrapper
         /// <summary>
         /// Launch application from name
         /// </summary>
-        /// <param name="name">name</param>
+        /// <param name="path">path</param>
         public ApplicationWrapper(string path)
         {
             this.host = Application.Launch(path);
             WrapperPool.Wrappers.Add(this);
         }
-
         /// <summary>
         /// Get Window by title
         /// </summary>
         /// <param name="title">Case sensitive</param>
+        /// <param name="timeout">(optional) timeout</param>
+        /// <param name="waitAfter">(optional) wait after open</param>
         /// <returns>Window</returns>
         public Window GetWindow(string title, 
             int timeout = InteractionTimeout.WindowSeek, 

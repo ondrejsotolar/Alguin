@@ -25,6 +25,8 @@ namespace Alguin.FormStructures
         /// <summary>
         /// Constructor
         /// </summary>
+        /// <param name="parent">parent window</param>
+        /// <param name="panel">panel</param>
         public GenericPanel(UIItemContainer parent, UIItemContainer panel) : base(parent)
         {
             this.panel = panel;

@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Alguin.TestStructures
+﻿namespace Alguin.TestStructures
 {
+    /// <summary>
+    /// Scenario interface
+    /// </summary>
     public interface IScenario
     {
-        //IEnumerable<StepResult> Evaluate();
+        string ScenarioName { get; set; }
     }
 }

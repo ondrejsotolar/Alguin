@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using Alguin.TestStructures;
-using Alguin.VisualMethods;
 
 namespace Alguin.Utilities
 {
@@ -54,11 +53,8 @@ namespace Alguin.Utilities
         /// <summary>
         /// Append step result to the report
         /// </summary>
-        /// <param name="scenarioName">scenario name</param>
         /// <param name="stepNumber">scenario step number</param>
-        /// <param name="step">step</param>
-        /// <param name="type">step result type</param>
-        /// <param name="exceptionStack">stacktrace</param>
+        /// <param name="step">step result</param>
         public void Append(int stepNumber, Func<ITestData, IStepResult> step, 
             StepResult stepResult)
         {

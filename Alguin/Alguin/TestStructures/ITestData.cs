@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Alguin.TestStructures
+﻿namespace Alguin.TestStructures
 {
+    /// <summary>
+    /// Test step data  interface
+    /// </summary>
     public interface ITestData
     {
+        object Data { get; set; }
     }
 }

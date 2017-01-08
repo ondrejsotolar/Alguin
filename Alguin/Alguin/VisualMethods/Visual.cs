@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using TestStack.White.UIItems;
 using TestStack.White.UIItems.Finders;
-using System.IO;
 
 namespace Alguin.VisualMethods
 {
@@ -113,15 +113,13 @@ namespace Alguin.VisualMethods
         /// <param name="leftXOffset">(optional) left X offset - added to label click point X coordinate</param>
         /// <param name="topYOffset">(optional) top Y offset - added to label click point Y coordinate</param>
         /// <param name="order">(optional) 1-based. In case of multiple matching labels. 1 means first, 2 second...</param>
-        /// <param name="throwException">suppress exceptions</param>
         /// <returns></returns>
         public T FindControlForBitmap<T>(
             string name,
             BitmapComparison bcType = BitmapComparison.Partial,
             int leftXOffset = 0,
             int topYOffset = 0,
-            int order = 0,
-            bool throwException = true)
+            int order = 0)
             where T : IUIItem
         {
             this.multiplier = 1;
@@ -172,7 +170,7 @@ namespace Alguin.VisualMethods
         /// Find point mathinch to bitmap model image.
         /// </summary>
         /// <param name="name">image name</param>
-        /// <param name="bcType">comparison method</param>
+        /// <param name="bcType">(optional) comparison method</param>
         /// <returns>point</returns>
         public Point? FindClickPointForBitmap(string name, BitmapComparison bcType = BitmapComparison.Partial)
         {
@@ -195,7 +193,8 @@ namespace Alguin.VisualMethods
         /// <param name="multiplier">(optional) OCR - screenshot resize coeficient - default is 3</param>
         /// <param name="deviation">(optional) OCR - screenshot gaussian blur deviation - default is 0.7</param>
         /// <returns>label and its center point</returns>
-        public Dictionary<Point, string> FindAllLabels(IUIItemContainer window, int multiplier = DefaultMultiplier, double deviation = DefaultDeviation, string savePath = null)
+        public Dictionary<Point, string> FindAllLabels(IUIItemContainer window, int multiplier = DefaultMultiplier, 
+            double deviation = DefaultDeviation, string savePath = null)
         {
             this.multiplier = multiplier;
 
@@ -267,6 +266,9 @@ namespace Alguin.VisualMethods
         #endregion
     }
 
+    /// <summary>
+    /// Bitmap comparison type
+    /// </summary>
     public enum BitmapComparison
     {
         Exact, Partial

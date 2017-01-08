@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using TestStack.White.UIItems;
 using Alguin.VisualMethods;
+using TestStack.White.UIItems;
 
 namespace Alguin.FormStructures
 {

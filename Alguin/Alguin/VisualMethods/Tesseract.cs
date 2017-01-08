@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
 using System.Diagnostics;
 using System.Drawing;
-using System.Drawing.Imaging;
-using System.Xml.Linq;
-using Kaliko.ImageLibrary;
-using Kaliko.ImageLibrary.Filters;
-using System.Reflection;
+using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
+using System.Xml.Linq;
 using Alguin.Utilities;
+using Kaliko.ImageLibrary;
 
 namespace Alguin.VisualMethods
 {
@@ -32,6 +28,10 @@ namespace Alguin.VisualMethods
 
         #region Constructor
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="wordSpace">(optional) word spacing</param>
         public Tesseract(int? wordSpace = null)
         {
             this.tmpPath = GetTmpPath();
@@ -82,7 +82,7 @@ namespace Alguin.VisualMethods
         /// </summary>
         /// <param name="label">label</param>
         /// <param name="pattern">regex pattern</param>
-        /// <param name="patternToLower">pattern to lowercase</param>
+        /// <param name="patternToLower">(optional) pattern to lowercase</param>
         /// <returns>match result</returns>
         public bool RegexMatch(string label, string pattern, bool patternToLower = true)
         {
@@ -116,9 +116,6 @@ namespace Alguin.VisualMethods
 
             var resultPath = outPath + ".html";
             var result = ReadHocrOutput(resultPath);
-
-            //if (File.Exists(resultPath))
-            //    File.Delete(resultPath);
 
             return result;
         }
@@ -164,10 +161,6 @@ namespace Alguin.VisualMethods
                     labelCenters.Add(point, entry.Value);
                 }
             }
-
-            /*var labelCenters = labels.ToDictionary(
-                x => new Point(x.Key.X + x.Key.Width / 2, x.Key.Y + x.Key.Height / 2),
-                x => x.Value);*/
 
             return labelCenters;
         }

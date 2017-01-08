@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Alguin.Utilities;
-using Alguin.AppWrapper;
-using Alguin.VisualMethods;
 using System.Drawing;
+using Alguin.AppWrapper;
+using Alguin.Utilities;
+using Alguin.VisualMethods;
 
 namespace Alguin.TestStructures
 {
@@ -78,7 +78,7 @@ namespace Alguin.TestStructures
         /// <summary>
         /// Run the test step currently in order
         /// </summary>
-        /// <param name="data">data to be sent to this particular step</param>
+        /// <param name="data">(optional) data to be sent to this particular step</param>
         /// <returns>this particular step result</returns>
         public IStepResult RunNext(ITestData data = null)
         {
@@ -158,7 +158,7 @@ namespace Alguin.TestStructures
         /// Fail current test step on logical condition
         /// </summary>
         /// <param name="message">reason</param>
-        /// <param name="skipAll">skip further steps, default is false</param>
+        /// <param name="skipAll">(optional) skip further steps, default is false</param>
         protected void LogicalFail(string message, bool skipAll = false)
         {
             this.logicalFail = true;

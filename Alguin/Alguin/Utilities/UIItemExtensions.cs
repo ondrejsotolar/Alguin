@@ -1,8 +1,7 @@
-﻿using TestStack.White.InputDevices;
+﻿using System.Threading;
+using TestStack.White.InputDevices;
 using TestStack.White.UIItems;
 using TestStack.White.UIItems.ListBoxItems;
-using TestStack.White.UIItems.MenuItems;
-using System.Threading;
 
 namespace Alguin.Utilities
 {
@@ -27,7 +26,7 @@ namespace Alguin.Utilities
         /// Set text value and wait
         /// </summary>
         /// <param name="text">text</param>
-        /// <param name="timeoutMilis">wait</param>
+        /// <param name="timeoutMilis">(optional) wait</param>
         public static void SetValueTabFocusWait(this UIItem item, string text, 
             int timeoutMilis = InteractionTimeout.Interaction)
         {
@@ -41,7 +40,7 @@ namespace Alguin.Utilities
         /// Click and wait
         /// </summary>
         /// <param name="item">item</param>
-        /// <param name="timeoutMilis">wait</param>
+        /// <param name="timeoutMilis">(optional) wait</param>
         public static void ClickAndWait(this UIItem item, int timeoutMilis = InteractionTimeout.Interaction)
         {
             item.Click();
@@ -52,7 +51,7 @@ namespace Alguin.Utilities
         /// Click on a point in window 
         /// </summary>
         /// <param name="point">point relative to top left corner</param>
-        /// <param name="timeoutMilis">wait</param>
+        /// <param name="timeoutMilis">(optional) wait</param>
         public static void ClickAndWait(this UIItemContainer window, System.Windows.Point point, 
             int timeoutMilis = InteractionTimeout.Interaction)
         {
@@ -65,7 +64,7 @@ namespace Alguin.Utilities
         /// Double click on a point in window 
         /// </summary>
         /// <param name="point">point relative to top left corner</param>
-        /// <param name="timeoutMilis">wait</param>
+        /// <param name="timeoutMilis">(optional) wait</param>
         public static void DoubleClickAndWait(this UIItemContainer window, System.Windows.Point point, 
             int timeoutMilis = InteractionTimeout.Interaction)
         {

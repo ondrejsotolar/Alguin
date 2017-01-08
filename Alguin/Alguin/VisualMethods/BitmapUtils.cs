@@ -4,9 +4,9 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms;
+using Alguin.Utilities;
 using Emgu.CV;
 using Emgu.CV.Structure;
-using Alguin.Utilities;
 using Kaliko.ImageLibrary;
 using Kaliko.ImageLibrary.Filters;
 using TestStack.White.UIItems;
@@ -75,6 +75,7 @@ namespace Alguin.VisualMethods
         /// <param name="threshold">black threshold</param>
         /// <param name="multiplier">size multiplier</param>
         /// <param name="deviation">deviation for gaussian</param>
+        /// <param name="threshold">(optional) threshold for b&w</param>
         /// <returns>name to bitmap</returns>
         public string PrepareForOcrPath(Bitmap bitmap, int multiplier,
             double deviation, int threshold = DefaultBlackThreshold)

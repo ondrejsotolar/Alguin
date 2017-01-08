@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using TestStack.White.UIItems;
+﻿using TestStack.White.UIItems;
 
 namespace Alguin.FormStructures
 {
