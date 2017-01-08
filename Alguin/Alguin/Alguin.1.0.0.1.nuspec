@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Alguin</id>
+    <version>1.0.0.1</version>
+    <title>$title$</title>
+    <authors>Ondrej Sotolar</authors>
+    <owners>Ondrej Sotolar</owners>
+    <licenseUrl>https://opensource.org/licenses/BSD-3-Clause</licenseUrl>
+    <projectUrl>https://github.com/ondrejsotolar/Alguin.git</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Alguin is a library for test automation of GUI</description>
+    <releaseNotes>Initial release.</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>Alguin</tags>
+  </metadata>
+</package>

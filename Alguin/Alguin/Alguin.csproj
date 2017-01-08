@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EmguCV.3.1.0.1\build\EmguCV.props" Condition="Exists('..\packages\EmguCV.3.1.0.1\build\EmguCV.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6F4792D9-DE74-4286-B63B-52789A927995}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Alguin</RootNamespace>
+    <AssemblyName>Alguin</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.3.3.0\lib\net40-client\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Emgu.CV.UI, Version=3.1.0.2282, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <HintPath>..\packages\EmguCV.3.1.0.1\lib\net30\Emgu.CV.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Emgu.CV.UI.GL, Version=3.1.0.2282, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <HintPath>..\packages\EmguCV.3.1.0.1\lib\net30\Emgu.CV.UI.GL.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Emgu.CV.World, Version=3.1.0.2282, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <HintPath>..\packages\EmguCV.3.1.0.1\lib\net30\Emgu.CV.World.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Kaliko.ImageLibrary, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImageLibrary.3.0.0\lib\net40\Kaliko.ImageLibrary.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OpenTK, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTK.1.1.2225.0\lib\net20\OpenTK.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OpenTK.GLControl, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTK.GLControl.1.1.2225.0\lib\net20\OpenTK.GLControl.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TestStack.White, Version=0.13.0.0, Culture=neutral, PublicKeyToken=2672efbf3e161801, processorArchitecture=MSIL">
+      <HintPath>..\packages\TestStack.White.0.13.3\lib\net40\TestStack.White.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="ZedGraph, Version=5.1.5.28844, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZedGraph.5.1.5\lib\ZedGraph.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppWrapper\ApplicationWrapper.cs" />
+    <Compile Include="AppWrapper\WrapperPool.cs" />
+    <Compile Include="FormStructures\GenericForm.cs" />
+    <Compile Include="FormStructures\GenericPanel.cs" />
+    <Compile Include="FormStructures\IForm.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestStructures\GenericScenario.cs" />
+    <Compile Include="TestStructures\IScenario.cs" />
+    <Compile Include="TestStructures\IStepResult.cs" />
+    <Compile Include="TestStructures\ITestData.cs" />
+    <Compile Include="TestStructures\ReportCreator.cs" />
+    <Compile Include="TestStructures\StepResult.cs" />
+    <Compile Include="Utilities\CollectionExtensions.cs" />
+    <Compile Include="Utilities\InteractionTimeout.cs" />
+    <Compile Include="Utilities\StringExtensions.cs" />
+    <Compile Include="Utilities\UIItemExtensions.cs" />
+    <Compile Include="VisualMethods\BitmapUtils.cs" />
+    <Compile Include="VisualMethods\Tesseract.cs" />
+    <Compile Include="VisualMethods\Visual.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OpenTK.dll.config" />
+    <None Include="packages.config" />
+    <None Include="ProjectLibraries\Tesseract-OCR\doc\AUTHORS" />
+    <None Include="ProjectLibraries\Tesseract-OCR\doc\COPYING" />
+    <None Include="ProjectLibraries\Tesseract-OCR\doc\README" />
+    <None Include="ProjectLibraries\Tesseract-OCR\doc\ReleaseNotes" />
+    <None Include="ProjectLibraries\Tesseract-OCR\tessdata\ces.traineddata" />
+    <None Include="ProjectLibraries\Tesseract-OCR\tessdata\configs\ambigs.train" />
+    <None Include="ProjectLibraries\Tesseract-OCR\tessdata\configs\api_config" />
+    <None Include="ProjectLibraries\Tesseract-OCR\tessdata\configs\bigram" />
+    <None Include="ProjectLibraries\Tesseract-OCR\tessdata\configs\box.train" />
+    <None Include="ProjectLibraries\Tesseract-OCR\tessdata\configs\box.train.stderr" />
+    <None Include="ProjectLibraries\Tesseract-OCR\tessdata\configs\digits" />
+    <None Include="ProjectLibraries\Tesseract-OCR\tessdata\configs\hocr" />
+    <None Include="ProjectLibraries\Tesseract-OCR\tessdata\configs\inter" />
+    <None Include="ProjectLibraries\Tesseract-OCR\tessdata\configs\kannada" />
+    <None Include="ProjectLibraries\Tesseract-OCR\tessdata\configs\linebox" />
+    <None Include="ProjectLibraries\Tesseract-OCR\tessdata\configs\logfile" />
+    <None Include="ProjectLibraries\Tesseract-OCR\tessdata\configs\makebox" />
+    <None Include="ProjectLibraries\Tesseract-OCR\tessdata\configs\quiet" />
+    <None Include="ProjectLibraries\Tesseract-OCR\tessdata\configs\rebox" />
+    <None Include="ProjectLibraries\Tesseract-OCR\tessdata\configs\strokewidth" />
+    <None Include="ProjectLibraries\Tesseract-OCR\tessdata\configs\unlv" />
+    <None Include="ProjectLibraries\Tesseract-OCR\tessdata\eng.cube.bigrams" />
+    <None Include="ProjectLibraries\Tesseract-OCR\tessdata\eng.cube.fold" />
+    <None Include="ProjectLibraries\Tesseract-OCR\tessdata\eng.cube.lm" />
+    <None Include="ProjectLibraries\Tesseract-OCR\tessdata\eng.cube.lm_" />
+    <None Include="ProjectLibraries\Tesseract-OCR\tessdata\eng.cube.nn" />
+    <None Include="ProjectLibraries\Tesseract-OCR\tessdata\eng.cube.params" />
+    <None Include="ProjectLibraries\Tesseract-OCR\tessdata\eng.cube.size" />
+    <None Include="ProjectLibraries\Tesseract-OCR\tessdata\eng.cube.word-freq" />
+    <None Include="ProjectLibraries\Tesseract-OCR\tessdata\eng.tesseract_cube.nn" />
+    <None Include="ProjectLibraries\Tesseract-OCR\tessdata\eng.traineddata" />
+    <None Include="ProjectLibraries\Tesseract-OCR\tessdata\tessconfigs\batch" />
+    <None Include="ProjectLibraries\Tesseract-OCR\tessdata\tessconfigs\batch.nochop" />
+    <None Include="ProjectLibraries\Tesseract-OCR\tessdata\tessconfigs\matdemo" />
+    <None Include="ProjectLibraries\Tesseract-OCR\tessdata\tessconfigs\msdemo" />
+    <None Include="ProjectLibraries\Tesseract-OCR\tessdata\tessconfigs\nobatch" />
+    <None Include="ProjectLibraries\Tesseract-OCR\tessdata\tessconfigs\segdemo" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ProjectLibraries\reportTemplate.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ProjectLibraries\Tesseract-OCR\ambiguous_words.exe" />
+    <Content Include="ProjectLibraries\Tesseract-OCR\classifier_tester.exe" />
+    <Content Include="ProjectLibraries\Tesseract-OCR\cntraining.exe" />
+    <Content Include="ProjectLibraries\Tesseract-OCR\combine_tessdata.exe" />
+    <Content Include="ProjectLibraries\Tesseract-OCR\dawg2wordlist.exe" />
+    <Content Include="ProjectLibraries\Tesseract-OCR\doc\eurotext.tif" />
+    <Content Include="ProjectLibraries\Tesseract-OCR\doc\phototest.tif" />
+    <Content Include="ProjectLibraries\Tesseract-OCR\java\ScrollView.jar" />
+    <Content Include="ProjectLibraries\Tesseract-OCR\mftraining.exe" />
+    <Content Include="ProjectLibraries\Tesseract-OCR\shapeclustering.exe" />
+    <Content Include="ProjectLibraries\Tesseract-OCR\tesseract.exe" />
+    <Content Include="ProjectLibraries\Tesseract-OCR\unicharset_extractor.exe" />
+    <Content Include="ProjectLibraries\Tesseract-OCR\wordlist2dawg.exe" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EmguCV.3.1.0.1\build\EmguCV.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EmguCV.3.1.0.1\build\EmguCV.props'))" />
+    <Error Condition="!Exists('..\packages\EmguCV.3.1.0.1\build\EmguCV.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EmguCV.3.1.0.1\build\EmguCV.targets'))" />
+  </Target>
+  <Import Project="..\packages\EmguCV.3.1.0.1\build\EmguCV.targets" Condition="Exists('..\packages\EmguCV.3.1.0.1\build\EmguCV.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
